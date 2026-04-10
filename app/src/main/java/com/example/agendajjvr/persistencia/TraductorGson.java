@@ -15,7 +15,7 @@ public class TraductorGson {
     
     public ArrayList<Datos> desempaquetarAgenda(String jsonGeneral) {
         if (jsonGeneral == null || jsonGeneral.isEmpty()) {
-            return new ArrayList<>(); // Si está vacío, regresa una lista en blanco
+            return new ArrayList<>(); 
         }
          
         Type tipoLista = new TypeToken<ArrayList<Datos>>(){}.getType();
