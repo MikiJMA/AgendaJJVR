@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
 public class GestorMemoria {
-    // Le cambiamos la extensión a .json para que sea oficial
+   
     private final String NOMBRE_DOCUMENTO = "MiAgendaSegura.json";
 
     public String leerTodoElDocumento(Context contexto) {
@@ -16,21 +16,21 @@ public class GestorMemoria {
             StringBuilder constructorTexto = new StringBuilder();
             String renglon;
 
-            // Va uniendo el texto gigante
+            
             while ((renglon = lector.readLine()) != null) {
                 constructorTexto.append(renglon);
             }
             lector.close();
             return constructorTexto.toString();
         } catch (Exception e) {
-            return ""; // Si es la primera vez que abres la app, regresa vacío
+            return ""; 
         }
     }
 
     public boolean guardarDocumento(Context contexto, String contenidoJson) {
         try {
             OutputStreamWriter osw = new OutputStreamWriter(contexto.openFileOutput(NOMBRE_DOCUMENTO, Context.MODE_PRIVATE));
-            osw.write(contenidoJson); // Guarda todo de un solo golpe
+            osw.write(contenidoJson); 
             osw.flush();
             osw.close();
             return true;
